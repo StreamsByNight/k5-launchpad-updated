@@ -7,11 +7,12 @@
     "dev": "concurrently -n client,api -c blue,green \"npm run dev:client\" \"npm run dev:server\"",
     "dev:client": "vite",
     "dev:server": "tsx watch server/index.ts",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "start:server": "tsx server/index.ts"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.0.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
