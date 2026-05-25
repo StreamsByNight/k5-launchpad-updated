@@ -1,0 +1,214 @@
+.breadcrumb {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.course-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.course-stats {
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.stat-mastered {
+  background: #fff8e1;
+  padding: 0 6px;
+  border-radius: 10px;
+}
+
+.stat-past-due {
+  background: #ffebee;
+  color: var(--red);
+  padding: 0 6px;
+  border-radius: 10px;
+}
+
+.course-detail-cards {
+  display: flex;
+  gap: 16px;
+}
+
+.grade-summary {
+  padding: 16px 24px;
+  text-align: center;
+  min-width: 120px;
+}
+
+.grade-score {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.grade-letter-big {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--green);
+  margin-top: 8px;
+}
+
+.grade-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.teacher-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.teacher-summary .teacher-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+}
+
+.teacher-summary p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.modules-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.modules-section-header h2 {
+  font-size: 1.25rem;
+}
+
+.filter-btn {
+  font-size: 0.85rem;
+}
+
+.module {
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.module-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: inherit;
+}
+
+.module-chevron {
+  color: var(--k12-blue);
+  font-size: 0.85rem;
+}
+
+.module-header-text {
+  flex: 1;
+}
+
+.module-header-text p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.module-header-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.module-checks {
+  color: var(--green);
+  letter-spacing: 2px;
+}
+
+.module-items {
+  border-top: 1px solid #eee;
+}
+
+.module-items-header,
+.module-item-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr 1.2fr;
+  gap: 12px;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  align-items: center;
+}
+
+.module-items-header {
+  font-weight: 700;
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+}
+
+.module-item-row {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.module-item-name small {
+  display: block;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.module-item-score {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.module-item-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.status-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.modules-placeholder {
+  padding: 24px;
+  color: var(--text-muted);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 24px;
+  font-weight: 600;
+}

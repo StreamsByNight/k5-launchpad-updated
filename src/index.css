@@ -1,0 +1,206 @@
+:root {
+  --k12-blue: #0066b3;
+  --k12-blue-dark: #004a85;
+  --k12-blue-light: #e8f4fc;
+  --sidebar-width: 72px;
+  --header-height: 56px;
+  --font: 'Source Sans 3', system-ui, sans-serif;
+  --text: #1a1a2e;
+  --text-muted: #5c6b7a;
+  --white: #ffffff;
+  --green: #2e7d32;
+  --green-light: #e8f5e9;
+  --yellow: #f9a825;
+  --red: #c62828;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --radius: 8px;
+}
+
+[data-theme='nature'] {
+  --bg-main: linear-gradient(180deg, #d4ebf7 0%, #b8dff0 40%, #a8d4e8 100%);
+  --bg-accent: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 120'%3E%3Cpath fill='%232d6a4f' d='M0 120 L0 80 Q50 60 100 75 T200 70 T300 85 T400 75 L400 120Z'/%3E%3C/svg%3E");
+}
+
+[data-theme='winter'] {
+  --bg-main: linear-gradient(180deg, #e8f4fc 0%, #d0e8f5 50%, #c5e0f0 100%);
+  --bg-accent: none;
+}
+
+[data-theme='space'] {
+  --bg-main: linear-gradient(180deg, #0d1b2a 0%, #1b263b 40%, #415a77 100%);
+  --bg-accent: none;
+}
+
+[data-theme='space'] .main-content,
+[data-theme='space'] .page-title,
+[data-theme='space'] .card,
+[data-theme='space'] h1,
+[data-theme='space'] h2 {
+  color: #e0e1dd;
+}
+
+[data-theme='space'] .card {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: #f0f7fc;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--k12-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.auth-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--sidebar-width);
+  min-width: 0;
+}
+
+.main-content {
+  flex: 1;
+  padding: 24px 32px 48px;
+  background: var(--bg-main);
+  position: relative;
+  overflow: auto;
+}
+
+.main-content::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 280px;
+  height: 120px;
+  background: var(--bg-accent) no-repeat bottom right;
+  background-size: contain;
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.main-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.15s;
+}
+
+.btn-primary {
+  background: var(--k12-blue);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--k12-blue-dark);
+}
+
+.btn-outline {
+  background: var(--white);
+  border: 1px solid #ccc;
+  color: var(--text);
+}
+
+.btn-success {
+  background: var(--green);
+  color: var(--white);
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-completed { background: var(--green-light); color: var(--green); border: 1px solid var(--green); }
+.status-in-progress { color: var(--green); font-style: italic; }
+.status-past-due { color: var(--red); }
+.status-not-started { color: var(--text-muted); }
+.status-mastered { background: #fff8e1; color: #f57f17; border: 1px solid var(--yellow); }
+
+.grade-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  background: var(--green-light);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--green);
+}
+
+.grade-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--green);
+  color: white;
+  font-weight: 700;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}

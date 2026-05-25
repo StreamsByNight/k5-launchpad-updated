@@ -1,0 +1,39 @@
+.class-connect-page {
+  max-width: 800px;
+}
+
+.class-connect-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.session-time {
+  color: var(--text-muted);
+  margin: 8px 0 20px;
+}
+
+.join-link {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.playback-note {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 500px;
+}
+
+.back-calendar {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.session-id {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}

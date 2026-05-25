@@ -1,0 +1,66 @@
+.teacher-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 800px;
+}
+
+.teacher-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+}
+
+.teacher-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.teacher-name {
+  flex: 1;
+  font-weight: 600;
+}
+
+.teacher-contact {
+  font-size: 0.9rem;
+}
+
+.teacher-contact strong {
+  margin-right: 4px;
+}
+
+.no-email {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.teachers-loading,
+.teachers-signin {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.teachers-empty {
+  padding: 20px;
+  margin-bottom: 16px;
+  color: var(--text-muted);
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--k12-blue);
+  text-decoration: underline;
+  cursor: pointer;
+  font: inherit;
+}

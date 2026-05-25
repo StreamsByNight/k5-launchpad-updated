@@ -1,0 +1,134 @@
+.lesson-page {
+  background: white;
+  margin: -24px -32px;
+  padding: 24px 32px 48px;
+  min-height: calc(100vh - var(--header-height));
+}
+
+.lesson-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.lesson-title {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #444;
+}
+
+.return-dashboard {
+  flex-shrink: 0;
+}
+
+.lesson-toolbar {
+  margin-bottom: 24px;
+}
+
+.btn.small {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+.activity-label-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.activity-type {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.activity-title {
+  font-size: 1.5rem;
+  color: var(--k12-blue);
+  flex: 1;
+}
+
+.activity-tools {
+  display: flex;
+  gap: 8px;
+}
+
+.activity-stage {
+  position: relative;
+  background: linear-gradient(135deg, #ffe0b2, #ffcc80);
+  border-radius: var(--radius);
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.play-btn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--k12-blue);
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.your-turn {
+  text-align: center;
+}
+
+.shapes {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 12px;
+  letter-spacing: 16px;
+}
+
+.your-turn-text {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #81d4fa;
+  font-style: italic;
+}
+
+.page-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  padding: 10px;
+  background: #e0e0e0;
+  border-radius: 24px;
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-nav-bar button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  padding: 4px 12px;
+}
+
+.page-nav-bar button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.lesson-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
+}
