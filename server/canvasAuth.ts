@@ -35,6 +35,12 @@ export async function exchangeCodeForToken(code: string): Promise<TokenResponse>
 
   if (!res.ok) {
     const text = await res.text();
+    // --- ADDED DIAGNOSTIC LOGGING TO EXPOSE CANVAS RAW ERROR IN RENDER LOGS ---
+    console.error('--- CANVAS OAUTH REDIRECT FAILURE DETAILS ---');
+    console.error(`Status Code: ${res.status}`);
+    console.error(`Canvas Response Body: ${text}`);
+    console.error(`Sent Redirect URI Was: "${config.redirectUri}"`);
+    console.error('--------------------------------------------');
     throw new Error(`Token exchange failed: ${res.status} ${text}`);
   }
   return res.json() as Promise<TokenResponse>;
