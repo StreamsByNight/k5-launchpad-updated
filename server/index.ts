@@ -120,9 +120,10 @@ app.post('/api/auth/callback', async (req, res) => {
       userName,
     });
 
+    // --- FIX: Forced secure option for production deployment ---
     res.cookie(SESSION_COOKIE, sessionId, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
+      secure: true, 
       sameSite: 'lax',
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
@@ -187,7 +188,6 @@ app.use('/api/canvas', async (req, res) => {
 });
 
 // --- SERVE FRONTEND STATIC FILES ---
-// Tells Express to look inside the compiled frontend folder
 app.use(express.static(path.join(__dirname, '../dist')));
 
 // Fallback routing so React Router links can load directly
