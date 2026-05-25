@@ -65,6 +65,15 @@ app.get('/api/health', (_req, res) => {
   res.json({ ok: true, oauthConfigured: isOAuthConfigured() });
 });
 
+// --- CACHE-BUSTING MIDDLEWARE ---
+// Forces the browser to get fresh auth status instead of serving cached 304 layers
+app.use('/api/auth', (_req, res, next) => {
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
+  next();
+});
+
 app.get('/api/auth/status', (req, res) => {
   const sid = getSessionId(req);
   const session = sid ? getSession(sid) : undefined;
