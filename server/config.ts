@@ -6,15 +6,18 @@ function required(name: string): string {
   return v;
 }
 
+// Fixed live fallback URL for your production Render deployment
+const PRODUCTION_URL = 'https://k5-launchpad-updated.onrender.com';
+
 export const config = {
   canvasBaseUrl: (process.env.CANVAS_BASE_URL ?? '').replace(/\/$/, ''),
   clientId: process.env.CANVAS_CLIENT_ID ?? '',
   clientSecret: process.env.CANVAS_CLIENT_SECRET ?? '',
-  redirectUri: process.env.CANVAS_REDIRECT_URI ?? 'http://localhost:5173/oauth/callback',
+  redirectUri: process.env.CANVAS_REDIRECT_URI ?? `${PRODUCTION_URL}/`,
   scopes: process.env.CANVAS_SCOPES ?? 'url:GET|/api/v1/courses url:GET|/api/v1/calendar_events url:GET|/api/v1/users/self',
   apiPort: Number(process.env.API_PORT ?? 3001),
   sessionSecret: process.env.SESSION_SECRET ?? 'dev-secret-change-in-production',
-  frontendUrl: process.env.FRONTEND_URL ?? 'http://localhost:5173',
+  frontendUrl: process.env.FRONTEND_URL ?? PRODUCTION_URL,
 };
 
 export function isOAuthConfigured(): boolean {
