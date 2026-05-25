@@ -2,6 +2,8 @@ import { randomBytes } from 'crypto';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import {
   canvasFetch,
   exchangeCodeForToken,
@@ -12,6 +14,10 @@ import { fetchAnnouncementsForUser } from './announcements.js';
 import { fetchTeachersForUser } from './teachers.js';
 import { config, isOAuthConfigured } from './config.js';
 import { createSession, deleteSession, getSession, updateSession } from './session.js';
+
+// Resolve directory names for ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const SESSION_COOKIE = 'k5_session';
@@ -178,6 +184,15 @@ app.use('/api/canvas', async (req, res) => {
   } catch (err) {
     res.status(502).json({ error: err instanceof Error ? err.message : 'Canvas request failed' });
   }
+});
+
+// --- SERVE FRONTEND STATIC FILES ---
+// Tells Express to look inside the compiled frontend folder
+app.use(express.static(path.join(__dirname, '../dist')));
+
+// Fallback routing so React Router links can load directly
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 app.listen(config.apiPort, () => {
